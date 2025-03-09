@@ -1,50 +1,47 @@
 /*********************************************************************************
-* WEB700 – Assignment 04
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
-* of this assignment has been copied manually or electronically from any other source
-* (including 3rd party web sites) or distributed to other students.
-*
-* Name: Jagat Pareshbhai Patel Student ID: 118557248 Date: 08-03-2025
-*
-* Online (Vercel) Link: ________________________________________________________
-*
-********************************************************************************/
+ * WEB700 – Assignment 04
+ * I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
+ * of this assignment has been copied manually or electronically from any other source
+ * (including 3rd party web sites) or distributed to other students.
+ *
+ * Name: Jagat Pareshbhai Patel Student ID: 118557248 Date: 08-03-2025
+ *
+ * Online (Vercel) Link: ________________________________________________________
+ *
+ ********************************************************************************/
 
+const express = require("express");
+const path = require("path");
+const collegeData = require("./modules/collegeData");
 
-var HTTP_PORT = process.env.PORT || 8080;
-var express = require("express");
-var path = require("path");
-var collegeData = require("./modules/collegeData");
-var app = express();
+const app = express();
+
+// Middleware
 app.use(express.static("views"));
 app.use(express.static(path.join(__dirname, "views")));
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-
-
-// Initialize the data before starting the server
+// Initialize the data (no need to tie this to app.listen for Vercel)
 collegeData.initialize()
     .then(() => {
-        app.listen(HTTP_PORT, () => {
-            console.log("server listening on port: " + HTTP_PORT);
-        });
+        console.log("Data initialized successfully");
     })
     .catch((err) => {
-        console.log("Failed to initialize data: ", err);
+        console.error("Failed to initialize data: ", err);
     });
 
 // Routes
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
+    res.sendFile(path.join(__dirname, "views", "home.html"));
 });
 
 app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/about.html"));
+    res.sendFile(path.join(__dirname, "views", "about.html"));
 });
 
 app.get("/htmlDemo", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/htmlDemo.html"));
+    res.sendFile(path.join(__dirname, "views", "htmlDemo.html"));
 });
 
 app.get("/students", (req, res) => {
@@ -77,23 +74,24 @@ app.get("/student/:num", (req, res) => {
         .catch(() => res.json({ message: "no results" }));
 });
 
-app.get('/students/add', (req, res) => {
-    res.sendFile(__dirname + '/views/addStudent.html');
+app.get("/students/add", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "addStudent.html"));
 });
 
-app.post('/students/add', (req, res) => {
-    collegeData.addStudent(req.body).then(() => {  
-        res.redirect('/students');
-    }).catch(err => {
-        res.status(500).send("Unable to add student.");
-    });
+app.post("/students/add", (req, res) => {
+    collegeData.addStudent(req.body)
+        .then(() => {
+            res.redirect("/students");
+        })
+        .catch((err) => {
+            res.status(500).send("Unable to add student.");
+        });
 });
-
 
 // 404 Route
 app.use((req, res) => {
     res.status(404).send("Page Not Found");
 });
 
-
-
+// Export the app for Vercel
+module.exports = app;
