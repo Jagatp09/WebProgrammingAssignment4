@@ -1,0 +1,63 @@
+
+body, html {
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 12px 20px;
+}
+
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    font-size: 1.8rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #f1c40f !important;
+}
+
+.btn-primary {
+    background: linear-gradient(to bottom, #ff9800, #f57c00);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to bottom, #f57c00, #e65100);
+    transform: scale(1.05);
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 30px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}

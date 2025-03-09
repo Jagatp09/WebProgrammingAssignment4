@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Showcase - HTML Demo</title>
+    <link rel="stylesheet" href="/css/theme.css">
+
+    </head>
+<body class="container py-4">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Basketball Showcase</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="htmlDemo.html">HTML Demo</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="addstudent.html">Add Student</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1 class="text-center mb-4">Basketball Showcase - HTML Demo</h1>
+    
+    <!-- Tables Section -->
+    <h2 class="mt-4">Tables</h2>
+    <table class="table table-bordered table-striped">
+        <caption class="text-center font-weight-bold">Basketball Team Stats</caption>
+        <thead class="thead-dark">
+            <tr>
+                <th>Team</th>
+                <th>Wins</th>
+                <th>Losses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Raptors</td>
+                <td>50</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>Lakers</td>
+                <td>45</td>
+                <td>37</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="bg-light">
+                <td colspan="3" class="text-center">End of Season Stats</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>This table showcases the performance stats of basketball teams, displaying their wins and losses.</p>
+
+    <!-- Lists Section -->
+    <h2 class="mt-4">Lists</h2>
+    <ul class="list-group">
+        <li class="list-group-item">NBA Teams
+            <ol class="pl-3">
+                <li>Toronto Raptors</li>
+                <li>Los Angeles Lakers</li>
+                <li>Chicago Bulls</li>
+            </ol>
+        </li>
+        <li class="list-group-item">Basketball Equipment</li>
+        <li class="list-group-item">Famous Players</li>
+        <li class="list-group-item">Upcoming Games</li>
+        <li class="list-group-item">Hall of Fame Inductees</li>
+    </ul>
+    
+    <!-- Images Section -->
+    <h2 class="mt-4">Images</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="basketball.jpg" class="img-fluid rounded shadow-sm" alt="Basketball">
+        </div>
+        <div class="col-md-4">
+            <img src="basketball2.jpg" class="img-fluid rounded shadow-sm" alt="Basketball Game">
+        </div>
+        <div class="col-md-4">
+            <img src="basketball3.jpg" class="img-fluid rounded shadow-sm" alt="Basketball Hoop">
+        </div>
+    </div>
+    
+
+    <!-- Audio Section -->
+    <h2 class="mt-4">Audio</h2>
+    <audio controls class="w-100">
+        <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3" type="audio/mpeg">
+        <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    
+
+    <!-- Video Section -->
+    <h2 class="mt-4">Video</h2>
+    <video controls width="100%" class="shadow-lg">
+        <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4" type="video/mp4">
+        <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.ogg" type="video/ogg">
+        <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

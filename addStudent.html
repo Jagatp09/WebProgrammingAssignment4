@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+   
+    <link rel="stylesheet" href="/css/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Student Portal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/students/add">Add Student</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <h2 class="text-center">Add a New Student</h2>
+        <form action="/students/add" method="POST" class="mt-4">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input class="form-control" name="firstName" type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input class="form-control" name="lastName" type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input class="form-control" name="email" type="email" required>
+            </div>
+            <div class="form-group">
+                <label>Program:</label>
+                <input class="form-control" name="program" type="text" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="TA" value="true">
+                <label class="form-check-label">Teaching Assistant</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Student</button>
+        </form>
+    </div>
+    
+    <footer class="text-center mt-5 p-3 bg-dark text-white">
+        <p>&copy; 2025 Student Portal | Powered by Express.js</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
